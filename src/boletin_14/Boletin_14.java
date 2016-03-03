@@ -18,8 +18,19 @@ public class Boletin_14 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        float temp;
+        double temp;
         temp = Float.parseFloat(JOptionPane.showInputDialog("Introduce unha temperatura"));
+        conversorTemperaturas conv = new conversorTemperaturas();
+        
+        
+        try{
+        conv.centigradosAFharenheit(temp);
+        
+        }catch(errorExcepcion error2){
+            System.out.println("Opcion no valida"+ error2.getMessage());
+        }
+        conv.centigradosAReamur(temp);
+      
     }
     
 }

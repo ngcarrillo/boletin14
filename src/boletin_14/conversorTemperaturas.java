@@ -19,24 +19,30 @@ public class conversorTemperaturas {
    
     public void centigradosAFharenheit(double tempCen) throws errorExcepcion {
         this.tempCen = tempCen;
-        if (tempCen > MINTEMP) {
+        if (tempCen < MINTEMP) {
             throw new errorExcepcion("A temperatura ten que ser mayor de 80");
         } else {
-            fha = 9.0 / 5.0 * tempCen + 32.4;
+           fha = 9.0 / 5.0 * tempCen + 32.4;
+           System.out.println("A temperatura en Fhareneheit é"+fha);
         }
+        
     }
 
     public void centigradosAReamur(double tempCen){
         try {
-            reamur = 4.0 / 5.0 * tempCen;
+            
             if (tempCen < MINTEMP) {
                 throw new errorExcepcion();
+            }else{
+            reamur = 4.0 / 5.0 * tempCen;
+            System.out.println("A temperatura en Reamur é"+reamur);
             }
         } catch (errorExcepcion error1) {
-            System.out.println("Opcion no valida");
+            System.out.println("Opcion no valida"+ error1.getMessage());
         }
-
+           
     }
+
 }
 
 
